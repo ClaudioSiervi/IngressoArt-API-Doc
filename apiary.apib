@@ -1,10 +1,9 @@
 FORMAT: 1A
-HOST: http://api.ingresso.art.br/api/v1
+HOST: http://stage.api.ingresso.art.br/api/v1/
 
 # Ingresso.Art
 
 Documentação da API Ingresso.Art
-Testeeee
 
 # Data Structures
 
@@ -17,8 +16,33 @@ Testeeee
 + name: Luciana Lima - Nome do cara
 + email: loo@intergalactic.com
 
+## Evento (object)
++ id (number, required)
++ nome (string)
++ descricao (string)
++ data (string)
++ hora (string)
++ local (string)
++ genero (string)
++ cidade (string)
++ estado (string)
++ ativo (string)
++ deleted_at (string)
++ created_at (string)
++ updated_at (string)
++ user_id (string)
++ gratuito (string)
++ privado (string)
++ identificador (string)
+
 # Blog Posts [/posts]
 
 ## Retrieve All Posts [GET]
 + Response 200 (application/json)
     + Attributes (array[Blog Post])
+
+# Eventos [/evento]
+
+## Lista todos os eventos [GET]
++ Response 200 (application/json)
+    + Attributes (array[Evento])
