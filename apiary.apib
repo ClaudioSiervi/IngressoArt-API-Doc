@@ -4,135 +4,7 @@ HOST: http://api.ingresso.art.br/api/v1
 # Ingresso.Art
 
 Documentação da API Ingresso.Art
-
-## Eventos Collection [/evento]
-
-### Lista todos os eventos [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-            "id": 1,
-            "nome": "Baile rave",
-            "descricao": "<p>Irr&uacute;&uacute;&uacute;</p>\n<p><strong>s&oacute; vai!!</strong></p>\n<p><strong>:P</strong></p>",
-            "data": "2017-02-22",
-            "hora": "2000-01-01T01:00:00.000Z",
-            "local": "Trajano",
-            "genero": "Trance",
-            "cidade": "Curitiba",
-            "estado": "PR",
-            "ativo": true,
-            "deleted_at": null,
-            "created_at": "2016-10-22T03:41:01.000Z",
-            "updated_at": "2017-02-01T01:57:36.000Z",
-            "user_id": 2,
-            "gratuito": null,
-            "privado": true,
-            "identificador": "baile_rave_2017",
-            "imagem_list": [
-              {
-                "id": 15,
-                "url": "http://res.cloudinary.com/dlgbr4brb/image/upload/v1484250063/hazf87szqgrwjqyygmq8.jpg",
-                "ativo": true,
-                "deleted_at": null,
-                "created_at": "2017-01-12T19:41:03.000Z",
-                "updated_at": "2017-01-12T19:42:17.000Z",
-                "evento_id": 1,
-                "miniatura": null,
-                "principal": null
-              },
-              {
-                "id": 17,
-                "url": "http://res.cloudinary.com/dlgbr4brb/image/upload/v1485394883/t9odtai4jnus8bhc2rtw.jpg",
-                "ativo": true,
-                "deleted_at": null,
-                "created_at": "2017-01-26T01:41:23.000Z",
-                "updated_at": "2017-01-26T01:41:23.000Z",
-                "evento_id": 1,
-                "miniatura": null,
-                "principal": null
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "nome": "Trancezera rastapé",
-            "descricao": "<h2>Festinha</h2>\n<p style=\"text-align: center;\"><strong>lalalal promo&ccedil;&atilde;o de</strong></p>\n<p>ingressos de gra&ccedil;a!! n&atilde;o perca!!</p>",
-            "data": "2018-01-22",
-            "hora": "2000-01-01T00:00:00.000Z",
-            "local": "Telemaco bar",
-            "genero": "forro",
-            "cidade": "Telemaco",
-            "estado": "PR",
-            "ativo": true,
-            "deleted_at": null,
-            "created_at": "2016-10-22T03:41:01.000Z",
-            "updated_at": "2017-01-22T04:02:05.000Z",
-            "user_id": 2,
-            "gratuito": null,
-            "privado": null,
-            "identificador": null,
-            "imagem_list": [
-              {
-                "id": 3,
-                "url": "http://vignette4.wikia.nocookie.net/theregularshow/images/e/e9/S6E21.029_Party_Horse_Likes_to_Party.png/revision/latest?cb=20150330202804",
-                "ativo": true,
-                "deleted_at": null,
-                "created_at": "2016-10-22T03:41:01.000Z",
-                "updated_at": "2016-12-07T20:03:07.000Z",
-                "evento_id": 2,
-                "miniatura": null,
-                "principal": null
-              }
-            ]
-          }
-        ]
-
-### Cria novo evento [POST]
-
-Cria um novo evento. Somente administrador.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
-
+Testeeee
 
 # Data Structures
 
@@ -144,3 +16,10 @@ Cria um novo evento. Somente administrador.
 ## Author (object)
 + name: Boba Fett
 + email: fett@intergalactic.com
+
+# Blog Posts [/posts]
+
+## Retrieve All Posts [GET]
++ Response 200 (application/json)
+    + Attributes (array[Blog Post])
+
