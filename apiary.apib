@@ -44,7 +44,7 @@ Documentação da API Ingresso.Art
 + privado (string)
 + identificador (string)
 
-# Group Publicas
+# Group Rotas Publicas
 
 ## Evento [/evento]
 
@@ -52,14 +52,30 @@ Documentação da API Ingresso.Art
 + Response 200 (application/json)
     + Attributes (array[Evento])
 
-### Lista um evento [GET /{id}]
+### Lista um evento [GET /evento/{id}]
 + Parameters
     + id (string)
 
 + Response 200 (application/json)
     + Attributes (Evento)
 
-# Group Admin
+## Usuário [/user/{id}]
+
++ Parameters
+    + id (string)
+
+### Lista um usuário [GET]
++ Response 200 (application/json)
+
+### Atualiza um usuário [PUT]
++ Response 200 (application/json)
+
+### Delete um usuário [DELETE]
++ Response 200 (application/json)
+
+
+# Group Rotas do Admin
+
 ## Admin [/admin]
 
 ### Lista todos os eventos [GET]
