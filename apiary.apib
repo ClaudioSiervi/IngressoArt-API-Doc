@@ -46,9 +46,9 @@ Documentação da API Ingresso.Art
 
 # Group Rotas Publicas
 
-## Evento [/evento]
+## Básicas [/]
 
-### Lista todos os eventos [GET]
+### Lista todos os eventos [GET /evento]
 + Response 200 (application/json)
     + Attributes (array[Evento])
 
@@ -59,19 +59,45 @@ Documentação da API Ingresso.Art
 + Response 200 (application/json)
     + Attributes (Evento)
 
-## Usuário [/user/{id}]
+## Cria um usuário [POST /create]
 
++ Request (application/json)
+
+        {
+            "nome":"Luciana Lima",
+            "email": "luciana@ingresso.art.br",
+            "password":"123123",
+            "tipo_documento":"CPF",
+            "documento":"06212660948",
+            "telefone":"96004955",
+            "data_nascimento":"04/04/1988"
+        }
+        
++ Response 200 (application/json)
+    + Attributes (User)
+
+
+
+
+
+
+## Usuário [/user/{id}]
 + Parameters
     + id (string)
 
 ### Lista um usuário [GET]
 + Response 200 (application/json)
+    + Attributes (User)
+        
+### Atualiza um usuário [PUT /user/{id}]
++ Response 200 (application/json)
+    + Attributes (User)
 
-### Atualiza um usuário [PUT]
+### Deleta um usuário [DELETE /user/{id}]
 + Response 200 (application/json)
 
-### Delete um usuário [DELETE]
-+ Response 200 (application/json)
+
+
 
 
 # Group Rotas do Admin
