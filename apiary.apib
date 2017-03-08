@@ -48,18 +48,7 @@ Documentação da API Ingresso.Art
 
 ## Básicas [/]
 
-### Lista todos os eventos [GET /evento]
-+ Response 200 (application/json)
-    + Attributes (array[Evento])
-
-### Lista um evento [GET /evento/{id}]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
-    + Attributes (Evento)
-
-## Cria um usuário [POST /create]
+### Cria um usuário [POST /create]
 
 + Request (application/json)
 
@@ -76,17 +65,76 @@ Documentação da API Ingresso.Art
 + Response 200 (application/json)
     + Attributes (User)
 
-## Ativa usuário [POST /ativar/{token}]
+### Ativa usuário [POST /ativar/{token}]
 
 + Parameters
     + token (string)
 
 + Response 200 (application/json)
 
-## Login [POST /login]
+### Login [POST /login]
 
 + Response 200 (application/json)
 
+### Recupera Token [GET /user/token/{token}]
+
++ Parameters
+    + token (string)
+
++ Response 200 (application/json)
+
+### Reseta Senha [POST /password_reset]
+
++ Response 200 (application/json)
+
+### Atualiza Senha [POST /password_update/{token}]
+
++ Response 200 (application/json)
+
+## Evento [/evento]
+
+### Lista todos os eventos [GET]
++ Response 200 (application/json)
+    + Attributes (array[Evento])
+
+### Lista um evento [GET /evento/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+    + Attributes (Evento)
+
+### Lista um evento por nome [GET /evento/nome/{nome}]
++ Parameters
+    + nome (string)
+
++ Response 200 (application/json)
+
+### Procura evento [POST /evento/search]
++ Response 200 (application/json)
+
+### Lista imagens de um evento [GET /evento/{id}/imagem]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Lista uma imagem de um evento [GET /evento/{id}/imagem/{id_imagem}]
++ Parameters
+    + id (string)
+    + id_imagem (string)
+
++ Response 200 (application/json)
+
+## Banner [/banner]
+### Lista todos os banners [GET]
++ Response 200 (application/json)
+
+### Lista um banner [GET /banner/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
 
 ## Usuário [/user/{id}]
 + Parameters
@@ -103,25 +151,54 @@ Documentação da API Ingresso.Art
 ### Deleta um usuário [DELETE]
 + Response 200 (application/json)
 
+## Pedido [/pedido/]
+### Lista todos os pedidos do usuário[GET]
++ Response 200 (application/json)
+
+### Lista um pedido [GET /pedido/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Cria novo pedido [POST]
++ Response 200 (application/json)
+
+### Cria novo lote no pedido [POST /pedido/lote]
++ Response 200 (application/json)
+
+### Atualiza um pedido [PUT /pedido/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Deleta um pedido [DELETE /pedido/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
 
 
 
 
 # Group Admin
 
-## Evento [/evento]
+## Evento [/admin/evento/{id}]
++ Parameters
+    + id (string)
 
-### Lista todos os eventos [GET]
+### Lista todos os eventos [GET /admin/evento/]
 + Response 200 (application/json)
     + Attributes (array[Evento])
 
-### Lista um evento [GET /{id}]
+### Lista um evento [GET]
 + Parameters
     + id (string)
 
 + Response 200 (application/json)
 
-### Atualiza um evento [PUT /{id}]
+### Atualiza um evento [PUT]
 + Parameters
     + id (string)
 
