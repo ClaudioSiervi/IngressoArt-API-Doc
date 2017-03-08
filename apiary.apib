@@ -76,24 +76,31 @@ Documentação da API Ingresso.Art
 + Response 200 (application/json)
     + Attributes (User)
 
+## Ativa usuário [POST /ativar/{token}]
 
++ Parameters
+    + token (string)
 
++ Response 200 (application/json)
 
+## Login [POST /login]
+
++ Response 200 (application/json)
 
 
 ## Usuário [/user/{id}]
 + Parameters
     + id (string)
 
-### Lista um usuário [GET]
+### Lista um usuário[GET]
 + Response 200 (application/json)
     + Attributes (User)
         
-### Atualiza um usuário [PUT /user/{id}]
+### Atualiza um usuário [PUT]
 + Response 200 (application/json)
     + Attributes (User)
 
-### Deleta um usuário [DELETE /user/{id}]
+### Deleta um usuário [DELETE]
 + Response 200 (application/json)
 
 
@@ -102,13 +109,22 @@ Documentação da API Ingresso.Art
 
 # Group Rotas do Admin
 
-## Admin [/admin]
+## Evento [/evento]
 
 ### Lista todos os eventos [GET]
 + Response 200 (application/json)
     + Attributes (array[Evento])
 
-### Atualiza um evento [PUT]
+### Lista um evento [GET /{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Atualiza um evento [PUT /{id}]
++ Parameters
+    + id (string)
+
 + Response 200 (application/json)
 
 # Group Produtor
