@@ -151,6 +151,28 @@ Documentação da API Ingresso.Art
 ### Deleta um usuário [DELETE]
 + Response 200 (application/json)
 
+### Endereço de um usuário [GET /user/{id}/endereco]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Cria endereço de um usuário [POST /endereco]
++ Response 200 (application/json)
+
+### Atualiza endereço de um usuário [PUT /user/{id}/endereco]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Deleta endereço de um usuário [DELETE /user/{id}/endereco]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+
 ## Pedido [/pedido/]
 ### Lista todos os pedidos do usuário[GET]
 + Response 200 (application/json)
@@ -179,10 +201,40 @@ Documentação da API Ingresso.Art
 
 + Response 200 (application/json)
 
+### Lista ingressos no pedido [GET /pedido/{id}/ingresso]
++ Parameters
+    + id (string)
 
++ Response 200 (application/json)
+
+### Detalhes do ingresso [GET /ingresso/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+
+## PagSeguro [/pagseguro]
+
+### Checkout do pedido [GET /pagseguro/pedido/{id}/checkout]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+    
+### Notificações [POST /pagseguro/notifications]
++ Response 200 (application/json)
+
+### Relatório transações abandonadas [GET /pagseguro/report/abandonada]
++ Response 200 (application/json)
+
+### Relatório histórico [GET /pagseguro/report/historico]
++ Response 200 (application/json)
 
 
 # Group Admin
+
+Rotas com prefixo /admin
 
 ## Evento [/admin/evento/{id}]
 + Parameters
@@ -205,7 +257,13 @@ Documentação da API Ingresso.Art
 + Response 200 (application/json)
 
 # Group Produtor
+
+Rotas com prefixo /produtor
+
 ## Produtor [/produtor]
 
 # Group Aplicativo
+
+Rotas com prefixo /aplicativo
+
 ## Aplicativo [/aplicativo]
