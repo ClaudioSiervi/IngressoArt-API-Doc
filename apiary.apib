@@ -44,11 +44,33 @@ Documentação da API Ingresso.Art
 + privado (string)
 + identificador (string)
 
-# Evento [/evento]
+# Group Publicas
 
-## Lista todos os eventos [GET]
+## Evento [/evento]
+
+### Lista todos os eventos [GET]
 + Response 200 (application/json)
     + Attributes (array[Evento])
 
-## Atualiza um evento [PUT]
+### Lista um evento [GET /{id}]
++ Parameters
+    + id (string)
+
 + Response 200 (application/json)
+    + Attributes (Evento)
+
+# Group Admin
+## Admin [/admin]
+
+### Lista todos os eventos [GET]
++ Response 200 (application/json)
+    + Attributes (array[Evento])
+
+### Atualiza um evento [PUT]
++ Response 200 (application/json)
+
+# Group Produtor
+## Produtor [/produtor]
+
+# Group Aplicativo
+## Aplicativo [/aplicativo]
