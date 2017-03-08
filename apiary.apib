@@ -16,8 +16,27 @@ Documentação da API Ingresso.Art
 + name: Luciana Lima - Nome do cara
 + email: loo@intergalactic.com
 
+## User (object)
++ id
++ nome
++ email
++ password
++ remember_token
++ tipo_documento
++ documento
++ telefone
++ banco
++ agencia
++ conta
++ api_key
++ ativo
++ admin
++ produtor
++ data_nascimento
+
+
 ## Evento (object)
-+ id (number, required)
++ id (number)
 + nome (string)
 + descricao (string)
 + data (string)
@@ -26,23 +45,34 @@ Documentação da API Ingresso.Art
 + genero (string)
 + cidade (string)
 + estado (string)
-+ ativo (string)
-+ deleted_at (string)
-+ created_at (string)
-+ updated_at (string)
++ ativo (boolean)
++ deleted_at
++ created_at
++ updated_at
 + user_id (string)
 + gratuito (string)
 + privado (string)
 + identificador (string)
 
-# Blog Posts [/posts]
+# Grupo Eventos
 
-## Retrieve All Posts [GET]
+## Eventos [/evento]
+
+### Lista todos os eventos [GET]
+Retorna uma lista de eventos
+
 + Response 200 (application/json)
-    + Attributes (array[Blog Post])
+    + Attributes (Evento)
 
-# Eventos [/evento]
+## Evento [/evento/{id}]
+Dados principais de um evento
++ Parameters
+    + id (string)
 
-## Lista todos os eventos [GET]
+        ID do evento.
+
+### Recupera um Evento [GET]
+Recupera o evento com o Id passado.
+
 + Response 200 (application/json)
-    + Attributes (array[Evento])
+    + Attributes (Evento)
