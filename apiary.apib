@@ -7,15 +7,6 @@ Documentação da API Ingresso.Art
 
 # Data Structures
 
-## Blog Post (object)
-+ id: 42 (number, required)
-+ text: Hello Worldeeee (string)
-+ author (Author) - Author of the blog post.
-
-## Author (object)
-+ name: Luciana Lima - Nome do cara
-+ email: loo@intergalactic.com
-
 ## User (object)
 + id
 + nome
@@ -33,7 +24,6 @@ Documentação da API Ingresso.Art
 + admin
 + produtor
 + data_nascimento
-
 
 ## Evento (object)
 + id (number)
@@ -54,16 +44,9 @@ Documentação da API Ingresso.Art
 + privado (string)
 + identificador (string)
 
-# Grupo Eventos
+# Evento [/evento]
 
-## Eventos [/evento]
-
-### Lista todos os eventos [GET]
+## Lista todos os eventos [GET]
 
 + Response 200 (application/json)
-    + Attributes (Evento)
-
-### Recupera um Evento [GET]
-
-+ Response 200 (application/json)
-    + Attributes (Evento)
+    + Attributes (array[Evento])
