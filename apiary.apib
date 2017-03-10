@@ -46,7 +46,104 @@ Documentação da API Ingresso.Art
 
 # Group Website
 
-## Básicas [/]
+## Banner [/banners]
+### Lista todos os banners [GET]
++ Response 200 (application/json)
+
+### Busca banner por ID [GET /banners/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+## Evento [/eventos]
+
+### Lista todos os eventos [GET]
++ Response 200 (application/json)
+    + Attributes (array[Evento])
+
+### Busca evento por ID [GET /eventos/{id}]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (Evento)
+
+### Lista imagens de um evento [GET /eventos/{id}/imagens]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Busca imagem de um evento por ID [GET /eventos/{id}/imagens/{id_imagem}]
++ Parameters
+    + id (string)
+    + id_imagem (string)
++ Response 200 (application/json)
+
+### Lista lotes de um evento [GET /eventos/{id}/lotes]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Busca lote de um evento por ID [GET /eventos/{id}/lotes/{id_lote}]
++ Parameters
+    + id (string)
+    + id_lote (string)
++ Response 200 (application/json)
+
+## Usuário [/users/{id}]
++ Parameters
+    + id (string)
+
+### Busca usuário por ID [GET]
++ Response 200 (application/json)
+    + Attributes (User)
+
+### Cria um usuário [POST /users]
++ Response 200 (application/json)
+    + Attributes (User)
+
+### Atualiza um usuário [PUT]
++ Response 200 (application/json)
+    + Attributes (User)
+
+### Deleta um usuário [DELETE]
++ Response 200 (application/json)
+
+## Endereço [/users/{user_id}/enderecos]
++ Parameters
+    + user_id (string)
+
+### Lista endereços de um usuário [GET]
++ Response 200 (application/json)
+
+### Lista endereço por ID [GET /users/{user_id}/enderecos/{id}]
++ Parameters
+    + user_id (string)
+    + id (string)
+
++ Response 200 (application/json)
+
+### Cria um endereço [POST]
++ Response 200 (application/json)
+
+### Atualiza um endereço [PUT /users/{user_id}/enderecos/{id}]
++ Parameters
+    + user_id (string)
+    + id (string)
+
++ Response 200 (application/json)
+
+### Deleta endereço [DELETE /users/{user_id}/enderecos/{id}]
++ Parameters
+    + user_id (string)
+    + id (string)
+
++ Response 200 (application/json)
+
+
+
+
+## Públicas [/]
 
 ### Cria um usuário [POST /create]
 
@@ -91,86 +188,7 @@ Documentação da API Ingresso.Art
 
 + Response 200 (application/json)
 
-## Evento [/evento]
 
-### Lista todos os eventos [GET]
-+ Response 200 (application/json)
-    + Attributes (array[Evento])
-
-### Lista um evento [GET /evento/{id}]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
-    + Attributes (Evento)
-
-### Lista um evento por nome [GET /evento/nome/{nome}]
-+ Parameters
-    + nome (string)
-
-+ Response 200 (application/json)
-
-### Procura evento [POST /evento/search]
-+ Response 200 (application/json)
-
-### Lista imagens de um evento [GET /evento/{id}/imagem]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
-
-### Lista uma imagem de um evento [GET /evento/{id}/imagem/{id_imagem}]
-+ Parameters
-    + id (string)
-    + id_imagem (string)
-
-+ Response 200 (application/json)
-
-## Banner [/banner]
-### Lista todos os banners [GET]
-+ Response 200 (application/json)
-
-### Lista um banner [GET /banner/{id}]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
-
-## Usuário [/user/{id}]
-+ Parameters
-    + id (string)
-
-### Lista um usuário[GET]
-+ Response 200 (application/json)
-    + Attributes (User)
-        
-### Atualiza um usuário [PUT]
-+ Response 200 (application/json)
-    + Attributes (User)
-
-### Deleta um usuário [DELETE]
-+ Response 200 (application/json)
-
-### Endereço de um usuário [GET /user/{id}/endereco]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
-
-### Cria endereço de um usuário [POST /endereco]
-+ Response 200 (application/json)
-
-### Atualiza endereço de um usuário [PUT /user/{id}/endereco]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
-
-### Deleta endereço de um usuário [DELETE /user/{id}/endereco]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
 
 
 ## Pedido [/pedido/]
