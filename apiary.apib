@@ -62,37 +62,15 @@ Documentação da API Ingresso.Art
 + Response 200 (application/json)
     + Attributes (Evento)
 
-### Lista imagens de um evento [GET /eventos/{id}/imagens]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Busca imagem de um evento por ID [GET /eventos/{id}/imagens/{id_imagem}]
-+ Parameters
-    + id (string)
-    + id_imagem (string)
-+ Response 200 (application/json)
-
-### Lista lotes de um evento [GET /eventos/{id}/lotes]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Busca lote de um evento por ID [GET /eventos/{id}/lotes/{id_lote}]
-+ Parameters
-    + id (string)
-    + id_lote (string)
-+ Response 200 (application/json)
-
 ## Usuário [/users/{id}]
 + Parameters
     + id (string)
 
-### Busca usuário por ID [GET]
+### Cria um usuário [POST /users]
 + Response 200 (application/json)
     + Attributes (User)
 
-### Cria um usuário [POST /users]
+### Busca usuário por ID [GET]
 + Response 200 (application/json)
     + Attributes (User)
 
@@ -103,40 +81,39 @@ Documentação da API Ingresso.Art
 ### Deleta um usuário [DELETE]
 + Response 200 (application/json)
 
-## Endereço [/users/{user_id}/enderecos]
+### Lista endereços de um usuário [GET /users/{user_id}/enderecos]
 + Parameters
     + user_id (string)
 
-### Lista endereços de um usuário [GET]
 + Response 200 (application/json)
 
-### Busca endereço por ID [GET /users/{user_id}/enderecos/{id}]
+### Cria um endereço [POST /users/{user_id}/enderecos]
++ Response 200 (application/json)
+
+### Busca endereço por ID [GET /enderecos/{id}]
 + Parameters
-    + user_id (string)
     + id (string)
 
 + Response 200 (application/json)
 
-### Cria um endereço [POST]
-+ Response 200 (application/json)
-
-### Atualiza um endereço [PUT /users/{user_id}/enderecos/{id}]
+### Atualiza um endereço [PUT /enderecos/{id}]
 + Parameters
-    + user_id (string)
     + id (string)
 
 + Response 200 (application/json)
 
-### Deleta endereço [DELETE /users/{user_id}/enderecos/{id}]
+### Deleta um endereço [DELETE /enderecos/{id}]
 + Parameters
-    + user_id (string)
     + id (string)
 
 + Response 200 (application/json)
 
 ## Pedido [/pedidos]
 
-### Lista pedidos do usuário logado [GET]
+### Cria um pedido [POST]
++ Response 200 (application/json)
+
+### Lista pedidos do usuário [GET]
 + Response 200 (application/json)
 
 ### Busca pedido por ID [GET /pedidos/{id}]
@@ -145,29 +122,16 @@ Documentação da API Ingresso.Art
 
 + Response 200 (application/json)
 
-### Cria um pedido [POST]
-+ Response 200 (application/json)
-
-
-## Itens do Pedido [/pedidos/{pedido_id}/pedido_itens]
+### Cria o pagamento de um pedido [POST /pedidos/{pedido_id}/pagamentos]
 + Parameters
     + pedido_id (string)
 
-### Lista os itens de um pedido [GET]
 + Response 200 (application/json)
 
-### Busca item do pedido por ID [GET /pedidos/{pedido_id}/pedido_itens/{id}]
-+ Parameters
-    + pedido_id (string)
-    + id (string)
-+ Response 200 (application/json)
-
-
-## Pagamentos [/pedidos/{pedido_id}/pagamentos]
+### Lista o pagamento de um pedido [GET /pedidos/{pedido_id}/pagamentos]
 + Parameters
     + pedido_id (string)
 
-### Lista o pagamento de um pedido [GET]
 + Response 200 (application/json)
 
 ### Busca um pagamento por ID [GET /pagamentos/{id}]
@@ -176,14 +140,10 @@ Documentação da API Ingresso.Art
 
 + Response 200 (application/json)
 
-### Cria o pagamento de um pedido [POST]
-+ Response 200 (application/json)
-
-## Ingressos [/pedidos/{pedido_id}/ingressos]
+### Lista os ingressos de um pedido [GET /pedidos/{pedido_id}/ingressos]
 + Parameters
     + pedido_id (string)
 
-### Lista os ingressos de um pedido [GET]
 + Response 200 (application/json)
 
 ### Busca um ingresso por ID [GET /ingressos/{id}]
