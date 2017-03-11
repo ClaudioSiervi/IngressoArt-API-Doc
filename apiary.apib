@@ -81,32 +81,27 @@ Documentação da API Ingresso.Art
 ### Deleta um usuário [DELETE]
 + Response 200 (application/json)
 
-### Lista endereços de um usuário [GET /users/{user_id}/enderecos]
+### Ativa usuário [POST /ativar/{token}]
 + Parameters
-    + user_id (string)
+    + token (string)
 
 + Response 200 (application/json)
 
-### Cria um endereço [POST /users/{user_id}/enderecos]
+### Login [POST /login]
 + Response 200 (application/json)
 
-### Busca endereço por ID [GET /enderecos/{id}]
+### Recupera Token [GET /user/token/{token}]
 + Parameters
-    + id (string)
+    + token (string)
 
 + Response 200 (application/json)
 
-### Atualiza um endereço [PUT /enderecos/{id}]
-+ Parameters
-    + id (string)
-
+### Reseta Senha [POST /password_reset]
 + Response 200 (application/json)
 
-### Deleta um endereço [DELETE /enderecos/{id}]
-+ Parameters
-    + id (string)
-
+### Atualiza Senha [POST /password_update/{token}]
 + Response 200 (application/json)
+
 
 ## Pedido [/pedidos]
 
@@ -150,31 +145,6 @@ Documentação da API Ingresso.Art
 + Parameters
     + id (string)
 + Response 200 (application/json)
-
-## Outras rotas [/]
-
-### Ativa usuário [POST /ativar/{token}]
-+ Parameters
-    + token (string)
-
-+ Response 200 (application/json)
-
-### Login [POST /login]
-+ Response 200 (application/json)
-
-### Recupera Token [GET /user/token/{token}]
-+ Parameters
-    + token (string)
-
-+ Response 200 (application/json)
-
-### Reseta Senha [POST /password_reset]
-+ Response 200 (application/json)
-
-### Atualiza Senha [POST /password_update/{token}]
-+ Response 200 (application/json)
-
-
 
 ## PagSeguro [/pagseguro]
 
