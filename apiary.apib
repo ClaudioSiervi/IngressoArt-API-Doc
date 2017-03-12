@@ -90,7 +90,7 @@ Documentação da API Ingresso.Art
 ### Login [POST /login]
 + Response 200 (application/json)
 
-### Recupera Token [GET /user/token/{token}]
+### Recupera usuário com token [GET /user/token/{token}]
 + Parameters
     + token (string)
 
@@ -168,24 +168,90 @@ Documentação da API Ingresso.Art
 
 Namespace /admin
 
-Todas as rotas com todos os métodos (GET, POST, GET /{id}, PUT, DELETE)
+
+## Banner [/admin/banners/{id}]
++ Parameters
+    + id (string)
+
+### Lista todos os banners [GET /admin/banners]
++ Response 200 (application/json)
+
+### Cria um banner [POST /admin/banners]
++ Response 200 (application/json)
+
+### Buscar banner por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza banner [PUT]
++ Response 200 (application/json)
+
+### Deleta banner [DELETE]
++ Response 200 (application/json)
+
+## Check-ins [/admin/checkins/{id}]
++ Parameters
+    + id (string)
+
+### Lista todos os check-ins [GET /admin/checkins]
++ Response 200 (application/json)
+
+### Cria um check-in [POST /admin/checkins]
++ Response 200 (application/json)
+
+### Buscar check-in por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza check-in [PUT]
++ Response 200 (application/json)
+
+### Deleta check-in [DELETE]
++ Response 200 (application/json)
+
+### Lista todos os logs de check-in [GET /admin/checkin_logs]
++ Response 200 (application/json)
 
 
-/admin/Banners
 
-/admin/Checkin_logs
+## Endereços [/admin/enderecos/{id}]
++ Parameters
+    + id (string)
 
-/admin/Checkins
+### Lista todos os endereços [GET /admin/enderecos]
++ Response 200 (application/json)
 
-/admin/Checkins/Checkin_logs
+### Cria um endereço [POST /admin/enderecos]
++ Response 200 (application/json)
 
-/admin/Enderecos
+### Buscar endereços por ID [GET]
++ Response 200 (application/json)
 
-/admin/Eventos
+### Atualiza endereços [PUT]
++ Response 200 (application/json)
 
-/admin/Eventos/Imagems
+### Deleta endereços [DELETE]
++ Response 200 (application/json)
 
-/admin/Eventos/Lotes
+## Eventos [/admin/eventos/{id}]
++ Parameters
+    + id (string)
+
+### Lista todos os eventos [GET /admin/eventos]
++ Response 200 (application/json)
+
+### Cria um evento [POST /admin/eventos]
++ Response 200 (application/json)
+
+### Buscar evento por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza evento [PUT]
++ Response 200 (application/json)
+
+### Deleta evento [DELETE]
++ Response 200 (application/json)
+
+
+
 
 /admin/Imagems
 
@@ -226,8 +292,8 @@ Todas as rotas com todos os métodos (GET, POST, GET /{id}, PUT, DELETE)
 /admin/Users/Pedidos
 
 
-## Evento [/admin/eventos]
-+ Response 200 (application/json)
+
+
 
 
 # Group Produtor
