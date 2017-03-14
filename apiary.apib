@@ -123,21 +123,9 @@ Documentação da API Ingresso.Art
 
 + Response 200 (application/json)
 
-### Lista o pagamento de um pedido [GET /pedidos/{pedido_id}/pagamentos]
-+ Parameters
-    + pedido_id (string)
-
-+ Response 200 (application/json)
-
 ### Busca um pagamento por ID [GET /pagamentos/{id}]
 + Parameters
     + id (string)
-
-+ Response 200 (application/json)
-
-### Lista os ingressos de um pedido [GET /pedidos/{pedido_id}/ingressos]
-+ Parameters
-    + pedido_id (string)
 
 + Response 200 (application/json)
 
@@ -188,48 +176,8 @@ Namespace /admin
 ### Deleta banner [DELETE]
 + Response 200 (application/json)
 
-## Check-ins [/admin/checkins/{id}]
-+ Parameters
-    + id (string)
-
-### Lista todos os check-ins [GET /admin/checkins]
-+ Response 200 (application/json)
-
-### Cria um check-in [POST /admin/checkins]
-+ Response 200 (application/json)
-
-### Buscar check-in por ID [GET]
-+ Response 200 (application/json)
-
-### Atualiza check-in [PUT]
-+ Response 200 (application/json)
-
-### Deleta check-in [DELETE]
-+ Response 200 (application/json)
-
-### Lista todos os logs de check-in [GET /admin/checkin_logs]
-+ Response 200 (application/json)
 
 
-
-## Endereços [/admin/enderecos/{id}]
-+ Parameters
-    + id (string)
-
-### Lista todos os endereços [GET /admin/enderecos]
-+ Response 200 (application/json)
-
-### Cria um endereço [POST /admin/enderecos]
-+ Response 200 (application/json)
-
-### Buscar endereços por ID [GET]
-+ Response 200 (application/json)
-
-### Atualiza endereços [PUT]
-+ Response 200 (application/json)
-
-### Deleta endereços [DELETE]
-+ Response 200 (application/json)
 
 ## Eventos [/admin/eventos/{id}]
 + Parameters
@@ -250,49 +198,265 @@ Namespace /admin
 ### Deleta evento [DELETE]
 + Response 200 (application/json)
 
+### Lista imagens de um evento [GET /admin/eventos/{id}/imagens]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Cria uma imagem para um eventos [POST /admin/eventos/{id}/imagens]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Buscar imagem por ID [GET /admin/imagens/{id}]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Atualiza imagem [PUT /admin/imagens/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Deleta imagem [DELETE /admin/imagens/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Lista lotes de um evento [GET /admin/eventos/{id}/lotes]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Cria um lote para um eventos [POST /admin/eventos/{id}/lotes]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+
+## Imagens [/admin/imagens/{id}]
++ Parameters
+    + id (string)
+
+### Buscar imagem por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza imagem [PUT]
++ Response 200 (application/json)
+
+### Deleta imagem [DELETE]
++ Response 200 (application/json)
+
+
+## Lotes [/admin/lotes/{id}]
++ Parameters
+    + id (string)
+
+### Buscar lote por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza lote [PUT]
++ Response 200 (application/json)
+
+### Deleta lote [DELETE]
++ Response 200 (application/json)
+
+### Lista todos os itens em pedidos por lote [GET /admin/lotes/{id}/pedido_itens]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+## Pedidos [/admin/pedidos/{id}]
++ Parameters
+    + id (string)
+
+### Listar pedidos [GET /admin/pedidos]
++ Response 200 (application/json)
+
+### Buscar pedido por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza pedido [PUT]
++ Response 200 (application/json)
+
+### Buscar itens de pedido por ID [GET /admin/pedido_itens/{id}]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Buscar pagamento de pedido [GET /admin/pedido/{id}/pagamentos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+
+## Pagamentos [/admin/pagamentos/{id}]
++ Parameters
+    + id (string)
+
+### Listar pagamentos [GET /admin/pagamentos]
++ Response 200 (application/json)
+
+### Buscar pagamento por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza pagamento [PUT]
++ Response 200 (application/json)
+
+
+## Ingressos [/admin/ingressos/{id}]
++ Parameters
+    + id (string)
+
+### Buscar ingresso por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza ingresso [PUT]
++ Response 200 (application/json)
+
+### Deleta ingresso [DELETE]
++ Response 200 (application/json)
+
+
+## Check-ins [/admin/checkins/{id}]
++ Parameters
+    + id (string)
+
+### Buscar check-in de um ingresso [GET /admin/ingressos/{id}/checkins]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Cria check-in para um ingresso [POST /admin/ingressos/{id}/checkins]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Buscar check-in por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza check-in [PUT]
++ Response 200 (application/json)
+
+### Deleta check-in [DELETE]
++ Response 200 (application/json)
+
+### Busca logs de um check-in [GET /admin/checkins/{id}/checkin_logs]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+### Lista todos logs de check-ins [GET /admin/checkin_logs]
++ Response 200 (application/json)
+
+### Buscar logs de check-ins por ID [GET /admin/checkin_logs/{id} ]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
+
+## Users [/admin/users/{id}]
++ Parameters
+    + id (string)
+
+### Lista todos os usuários [GET /admin/users]
++ Response 200 (application/json)
+
+### Cria um usuário [POST /admin/users]
++ Response 200 (application/json)
+
+### Buscar usuário por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza usuário [PUT]
++ Response 200 (application/json)
+
+### Deleta usuário [DELETE]
++ Response 200 (application/json)
+
+### Lista endereços de usuário [GET /admin/users/{id}/enderecos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Cria endereço para um usuário [POST /admin/users/{id}/enderecos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Lista eventos de usuário [GET /admin/users/{id}/eventos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Cria evento para um usuário [POST /admin/users/{id}/eventos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Lista logs de usuário [GET /admin/users/{id}/logs]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Lista password resets de usuário [GET /admin/users/{id}/password_resets]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Lista pedidos de usuário [GET /admin/users/{id}/pedidos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+## Endereços [/admin/enderecos/{id}]
++ Parameters
+    + id (string)
+
+### Buscar endereços por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza endereços [PUT]
++ Response 200 (application/json)
+
+### Deleta endereços [DELETE]
++ Response 200 (application/json)
 
 
 
-/admin/Imagems
+## Password Resets [/admin/password_resets/{id}]
++ Parameters
+    + id (string)
 
-/admin/Ingressos
+### Lista todos os password resets [GET /admin/password_resets]
++ Response 200 (application/json)
 
-/admin/ingressos/Checkins
+### Cria um password resets [POST /admin/password_resets]
++ Response 200 (application/json)
 
-/admin/Logs
+### Buscar password resets por ID [GET]
++ Response 200 (application/json)
 
-/admin/Lotes
+### Atualiza password resets [PUT]
++ Response 200 (application/json)
 
-/admin/lotes/Pedido_items
-
-/admin/Pagamentos
-
-/admin/Password_resets
-
-/admin/Pedido_items
-
-/admin/Pedido_items/Ingressos
-
-/admin/Pedidos
-
-/admin/Pedidos/Pedido_items
-
-/admin/Pedidos/Pagamentos
-
-/admin/Users
-
-/admin/Users/Enderecos
-
-/admin/Users/Eventos
-
-/admin/Users/Logs
-
-/admin/Users/Password_resets
-
-/admin/Users/Pedidos
+### Deleta password resets [DELETE]
++ Response 200 (application/json)
 
 
+## Logs [/admin/logs]
 
+### Listas logs [GET]
++ Response 200 (application/json)
+
+### Buscar log por ID [GET /admin/logs/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
 
 
 
