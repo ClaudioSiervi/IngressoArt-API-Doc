@@ -7,6 +7,162 @@ Documentação da API Ingresso.Art
 
 # Data Structures
 
+## Banner (object)
++ id
++ path
++ ativo
++ evento_id
++ link
++ deleted_at
++ created_at
++ updated_at
+
+## Checkin Logs (object)
++ id
++ checkin_status
++ created_at
++ updated_at
++ checkin_id
++ success
++ msg
+
+## Checkin (object)
++id
++evento_id
++lote_id
++created_at
++updated_at
++ingresso_id
++ confirmado
+
+## Endereço (object)
++ id
++ descricao
++ cep
++ rua
++ numero
++ complemento
++ bairro
++ estado
++ cidade
++ pais
++ created_at
++ updated_at
++ user_id
+
+## Evento (object)
++ id
++ nome
++ descricao
++ data
++ hora
++ local
++ genero
++ cidade
++ estado
++ ativo
++ deleted_at
++ created_at
++ updated_at
++ user_id
++ gratuito
++ privado
++ identificador
++ hora_termino
++ data_termino
+
+## Imagem (object)
++ id
++ url
++ ativo
++ deleted_at
++ created_at
++ updated_at
++ evento_id
++ miniatura
++ principal
+
+## Ingresso (object)
++ id
++ nome
++ documento
++ codigo
++ ativo
++ deleted_at
++ created_at
++ updated_at
++ pedido_item_id
++ tipo_documento
+
+## Log (object)
++ id
++ action
++ model
++ previous_data
++ new_data
++ user
++ ip
++ created_at
++ updated_at
++ user_id
+
+## Lote (object)
++ id
++ descricao
++ valor
++ taxa_administrativa
++ valor_total
++ ativo
++ quantidade
++ deleted_at
++ created_at
++ updated_at
++ evento_id
+
+## Pagamento (object)
++ id
++ provider
++ transacao
++ data_transacao
++ status
++ created_at
++ updated_at
++ pedido_id
++ ativo
++ deleted_at
+
+## Password Reset (object)
++ id
++ email
++ token
++ created_at
++ updated_at
++ user_id
++ ativo
++ deleted_at
+
+## Pedido item (object)
++ id
++ quantidade
++ valor_unitario
++ valor_total
++ created_at
++ updated_at
++ lote_id
++ pedido_id
++ ativo
++ deleted_at
+
+## Pedido (object)
++ id
++ valor_total
++ status
++ created_at
++ updated_at
++ user_id
++ ativo
++ deleted_at
+
 ## User (object)
 + id
 + nome
@@ -24,25 +180,12 @@ Documentação da API Ingresso.Art
 + admin
 + produtor
 + data_nascimento
-
-## Evento (object)
-+ id (number)
-+ nome (string)
-+ descricao (string)
-+ data (string)
-+ hora (string)
-+ local (string)
-+ genero (string)
-+ cidade (string)
-+ estado (string)
-+ ativo (boolean)
 + deleted_at
 + created_at
 + updated_at
-+ user_id (string)
-+ gratuito (string)
-+ privado (string)
-+ identificador (string)
++ facebook_id
++ facebook_picture_url
++ sexo
 
 # Group Website
 
@@ -235,22 +378,32 @@ Namespace /admin
     + id (string)
 + Response 200 (application/json)
 
-### Buscar lote por ID [GET /admin/lotes/{id}]
+
+## Imagens [/admin/imagens/{id}]
 + Parameters
     + id (string)
 
+### Buscar imagem por ID [GET]
 + Response 200 (application/json)
 
-### Atualiza lote [PUT /admin/lotes/{id}]
-+ Parameters
-    + id (string)
-
+### Atualiza imagem [PUT]
 + Response 200 (application/json)
 
-### Deleta lote [DELETE /admin/lotes/{id}]
+### Deleta imagem [DELETE]
++ Response 200 (application/json)
+
+
+## Lotes [/admin/lotes/{id}]
 + Parameters
     + id (string)
 
+### Buscar lote por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza lote [PUT]
++ Response 200 (application/json)
+
+### Deleta lote [DELETE]
 + Response 200 (application/json)
 
 ### Lista todos os itens em pedidos por lote [GET /admin/lotes/{id}/pedido_itens]
