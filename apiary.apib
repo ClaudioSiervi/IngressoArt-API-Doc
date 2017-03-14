@@ -235,32 +235,22 @@ Namespace /admin
     + id (string)
 + Response 200 (application/json)
 
-
-## Imagens [/admin/imagens/{id}]
+### Buscar lote por ID [GET /admin/lotes/{id}]
 + Parameters
     + id (string)
 
-### Buscar imagem por ID [GET]
 + Response 200 (application/json)
 
-### Atualiza imagem [PUT]
-+ Response 200 (application/json)
-
-### Deleta imagem [DELETE]
-+ Response 200 (application/json)
-
-
-## Lotes [/admin/lotes/{id}]
+### Atualiza lote [PUT /admin/lotes/{id}]
 + Parameters
     + id (string)
 
-### Buscar lote por ID [GET]
 + Response 200 (application/json)
 
-### Atualiza lote [PUT]
-+ Response 200 (application/json)
+### Deleta lote [DELETE /admin/lotes/{id}]
++ Parameters
+    + id (string)
 
-### Deleta lote [DELETE]
 + Response 200 (application/json)
 
 ### Lista todos os itens em pedidos por lote [GET /admin/lotes/{id}/pedido_itens]
