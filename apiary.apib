@@ -16,24 +16,29 @@ Documentação da API Ingresso.Art
 + deleted_at
 + created_at
 + updated_at
++ evento (Evento)
 
 ## Checkin Logs (object)
 + id
 + checkin_status
++ success
++ msg
 + created_at
 + updated_at
 + checkin_id
-+ success
-+ msg
 
 ## Checkin (object)
-+id
-+evento_id
-+lote_id
-+created_at
-+updated_at
-+ingresso_id
++ id
++ evento_id
++ lote_id
++ ingresso_id
 + confirmado
++ created_at
++ updated_at
++ evento (Evento)
++ lote (Lote)
++ ingresso (Ingresso)
+
 
 ## Endereço (object)
 + id
@@ -46,9 +51,10 @@ Documentação da API Ingresso.Art
 + estado
 + cidade
 + pais
++ user_id
 + created_at
 + updated_at
-+ user_id
++ user (User)
 
 ## Evento (object)
 + id
@@ -61,26 +67,28 @@ Documentação da API Ingresso.Art
 + cidade
 + estado
 + ativo
-+ deleted_at
-+ created_at
-+ updated_at
 + user_id
 + gratuito
 + privado
 + identificador
 + hora_termino
 + data_termino
++ deleted_at
++ created_at
++ updated_at
 
 ## Imagem (object)
 + id
 + url
 + ativo
-+ deleted_at
-+ created_at
-+ updated_at
 + evento_id
 + miniatura
 + principal
++ deleted_at
++ created_at
++ updated_at
++ evento (Evento)
+
 
 ## Ingresso (object)
 + id
@@ -88,11 +96,13 @@ Documentação da API Ingresso.Art
 + documento
 + codigo
 + ativo
++ pedido_item_id
++ tipo_documento
 + deleted_at
 + created_at
 + updated_at
-+ pedido_item_id
-+ tipo_documento
++ pedido_item (Pedido item)
+
 
 ## Log (object)
 + id
@@ -102,9 +112,11 @@ Documentação da API Ingresso.Art
 + new_data
 + user
 + ip
++ user_id
 + created_at
 + updated_at
-+ user_id
++ user (User)
+
 
 ## Lote (object)
 + id
@@ -114,10 +126,12 @@ Documentação da API Ingresso.Art
 + valor_total
 + ativo
 + quantidade
++ evento_id
 + deleted_at
 + created_at
 + updated_at
-+ evento_id
++ evento (Evento)
+
 
 ## Pagamento (object)
 + id
@@ -125,43 +139,49 @@ Documentação da API Ingresso.Art
 + transacao
 + data_transacao
 + status
-+ created_at
-+ updated_at
 + pedido_id
 + ativo
++ created_at
++ updated_at
 + deleted_at
++ pedido (Pedido)
+
 
 ## Password Reset (object)
 + id
 + email
 + token
-+ created_at
-+ updated_at
 + user_id
 + ativo
++ created_at
++ updated_at
 + deleted_at
++ user (User)
 
 ## Pedido item (object)
 + id
 + quantidade
 + valor_unitario
 + valor_total
-+ created_at
-+ updated_at
 + lote_id
 + pedido_id
 + ativo
++ created_at
++ updated_at
 + deleted_at
++ pedido (Pedido)
++ lote (Lote)
 
 ## Pedido (object)
 + id
 + valor_total
 + status
-+ created_at
-+ updated_at
 + user_id
 + ativo
++ created_at
++ updated_at
 + deleted_at
++ user (User)
 
 ## User (object)
 + id
@@ -180,18 +200,19 @@ Documentação da API Ingresso.Art
 + admin
 + produtor
 + data_nascimento
-+ deleted_at
-+ created_at
-+ updated_at
 + facebook_id
 + facebook_picture_url
 + sexo
++ created_at
++ updated_at
++ deleted_at
 
 # Group Website
 
 ## Banner [/banners]
 ### Lista todos os banners [GET]
 + Response 200 (application/json)
+    + Attributes (array[Banner])
 
 ## Evento [/eventos]
 
@@ -202,6 +223,7 @@ Documentação da API Ingresso.Art
 ### Busca evento por ID [GET /eventos/{id}]
 + Parameters
     + id (string)
+
 + Response 200 (application/json)
     + Attributes (Evento)
 
@@ -210,28 +232,51 @@ Documentação da API Ingresso.Art
     + id (string)
 
 ### Cria um usuário [POST /users]
-+ Response 200 (application/json)
+
+Apenas depois de confirmado o email (rota atual /create)
+
++ Request
+    + Attributes (User)
+
++ Response 201 (application/json)
     + Attributes (User)
 
 ### Busca usuário por ID [GET]
+Deve retornar apenas informações do usuário logado, caso contrario erro
+
++ Request
+    + Headers
+
+            Content-Type: application/json
+            Authorization:   Token token=1wpqVgjxLkom6PXNkDd8FAtt
+        
+
 + Response 200 (application/json)
     + Attributes (User)
 
 ### Atualiza um usuário [PUT]
+Atualiza apenas informações do usuário logado.
+
 + Response 200 (application/json)
     + Attributes (User)
 
-### Deleta um usuário [DELETE]
-+ Response 200 (application/json)
-
-### Ativa usuário [POST /ativar/{token}]
-+ Parameters
-    + token (string)
-
-+ Response 200 (application/json)
-
 ### Login [POST /login]
++ Request
+
+    + Headers
+
+            Content-Type: application/json
+
+    + Body
+
+
+            {
+                "email":"user@email.com",
+                "password":"123123"
+            }
+
 + Response 200 (application/json)
+    + Attributes (User)
 
 ### Recupera usuário com token [GET /user/token/{token}]
 + Parameters
@@ -239,12 +284,51 @@ Documentação da API Ingresso.Art
 
 + Response 200 (application/json)
 
-### Reseta Senha [POST /password_reset]
+        {
+            "nome": "Fulano de Tal",
+            "email": "usuario@ingresso.art.br"
+        }
+
+### Ativa usuário [POST /ativar/{token}]
+Usuário será encaminhado pelo email.
+
++ Parameters
+    + token (string)
+
++ Request
+
+    + Body
+
+            {   "password" : {
+                    "password" : "secret",
+                    "password_confirm": "secret"
+                }
+            }
+
 + Response 200 (application/json)
+
+
+### Reseta Senha [POST /password_reset]
++ Request
+
+    + Body
+
+            {   "email": "user@email.com"}
+
++ Response 200 (application/json)
+
+            {   "msg" : "Email enviado" }
+
 
 ### Atualiza Senha [POST /password_update/{token}]
-+ Response 200 (application/json)
++ Request
 
+    + Body
+
+            {   "password" : "secret" }
+
++ Response 200 (application/json)
+    + Attributes (User)
 
 ## Pedido [/pedidos]
 
@@ -252,13 +336,27 @@ Documentação da API Ingresso.Art
 + Response 200 (application/json)
 
 ### Lista pedidos do usuário [GET]
++ Request
+    + Headers
+
+            Content-Type: application/json
+            Authorization:   Token token=1wpqVgjxLkom6PXNkDd8FAtt
+
 + Response 200 (application/json)
+    + Attributes (array[Pedido])
 
 ### Busca pedido por ID [GET /pedidos/{id}]
 + Parameters
     + id (string)
 
++ Request
+    + Headers
+
+            Content-Type: application/json
+            Authorization:   Token token=1wpqVgjxLkom6PXNkDd8FAtt
+
 + Response 200 (application/json)
+    + Attributes (Pedido)
 
 ### Cria o pagamento de um pedido [POST /pedidos/{pedido_id}/pagamentos]
 + Parameters
