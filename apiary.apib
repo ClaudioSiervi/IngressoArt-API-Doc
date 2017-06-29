@@ -583,9 +583,6 @@ Namespace /admin
 ### Lista todos os usuários [GET /admin/users]
 + Response 200 (application/json)
 
-### Cria um usuário [POST /admin/users]
-+ Response 200 (application/json)
-
 ### Buscar usuário por ID [GET]
 + Response 200 (application/json)
 
@@ -595,32 +592,7 @@ Namespace /admin
 ### Deleta usuário [DELETE]
 + Response 200 (application/json)
 
-### Lista endereços de usuário [GET /admin/users/{id}/enderecos]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Cria endereço para um usuário [POST /admin/users/{id}/enderecos]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Lista eventos de usuário [GET /admin/users/{id}/eventos]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Cria evento para um usuário [POST /admin/users/{id}/eventos]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Lista logs de usuário [GET /admin/users/{id}/logs]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Lista password resets de usuário [GET /admin/users/{id}/password_resets]
+### Lista eventos de um usuário produtor [GET /admin/users/{id}/eventos]
 + Parameters
     + id (string)
 + Response 200 (application/json)
@@ -630,39 +602,6 @@ Namespace /admin
     + id (string)
 + Response 200 (application/json)
 
-## Endereços [/admin/enderecos/{id}]
-+ Parameters
-    + id (string)
-
-### Buscar endereços por ID [GET]
-+ Response 200 (application/json)
-
-### Atualiza endereços [PUT]
-+ Response 200 (application/json)
-
-### Deleta endereços [DELETE]
-+ Response 200 (application/json)
-
-
-
-## Password Resets [/admin/password_resets/{id}]
-+ Parameters
-    + id (string)
-
-### Lista todos os password resets [GET /admin/password_resets]
-+ Response 200 (application/json)
-
-### Cria um password resets [POST /admin/password_resets]
-+ Response 200 (application/json)
-
-### Buscar password resets por ID [GET]
-+ Response 200 (application/json)
-
-### Atualiza password resets [PUT]
-+ Response 200 (application/json)
-
-### Deleta password resets [DELETE]
-+ Response 200 (application/json)
 
 
 ## Logs [/admin/logs]
