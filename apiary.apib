@@ -537,6 +537,42 @@ Namespace /admin
 ### Deleta ingresso [DELETE]
 + Response 200 (application/json)
 
+## Users [/admin/users/{id}]
++ Parameters
+    + id (string)
+
+### Lista todos os usuários [GET /admin/users]
++ Response 200 (application/json)
+
+### Buscar usuário por ID [GET]
++ Response 200 (application/json)
+
+### Atualiza usuário [PUT]
++ Response 200 (application/json)
+
+### Deleta usuário [DELETE]
++ Response 200 (application/json)
+
+### Lista eventos de um usuário produtor [GET /admin/users/{id}/eventos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+### Lista pedidos de usuário [GET /admin/users/{id}/pedidos]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+
+## Logs [/admin/logs]
+
+### Listas logs [GET]
++ Response 200 (application/json)
+
+### Buscar log por ID [GET /admin/logs/{id}]
++ Parameters
+    + id (string)
+
++ Response 200 (application/json)
 
 ## Check-ins [/admin/checkins/{id}]
 + Parameters
@@ -575,47 +611,6 @@ Namespace /admin
     + id (string)
 
 + Response 200 (application/json)
-
-## Users [/admin/users/{id}]
-+ Parameters
-    + id (string)
-
-### Lista todos os usuários [GET /admin/users]
-+ Response 200 (application/json)
-
-### Buscar usuário por ID [GET]
-+ Response 200 (application/json)
-
-### Atualiza usuário [PUT]
-+ Response 200 (application/json)
-
-### Deleta usuário [DELETE]
-+ Response 200 (application/json)
-
-### Lista eventos de um usuário produtor [GET /admin/users/{id}/eventos]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-### Lista pedidos de usuário [GET /admin/users/{id}/pedidos]
-+ Parameters
-    + id (string)
-+ Response 200 (application/json)
-
-
-
-## Logs [/admin/logs]
-
-### Listas logs [GET]
-+ Response 200 (application/json)
-
-### Buscar log por ID [GET /admin/logs/{id}]
-+ Parameters
-    + id (string)
-
-+ Response 200 (application/json)
-
-
 
 # Group Produtor
 
